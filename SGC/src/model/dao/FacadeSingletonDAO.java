@@ -13,7 +13,7 @@ public final class FacadeSingletonDAO {
 	private DAO dao;
     private static FacadeSingletonDAO instance;
 	 
-     public FacadeSingletonDAO getInstance(Object objeto){
+     public static FacadeSingletonDAO getInstance(Object objeto){
     	 if(instance == null){
     		 instance = new FacadeSingletonDAO(objeto);
     	 }
@@ -24,15 +24,14 @@ public final class FacadeSingletonDAO {
 	 * Esta classe recebe um objeto e tenta instanciar um DAO para acessar o banco de dados e manipular suas informações.
 	 * @param objeto
 	 */
-	private FacadeSingletonDAO(Object objeto){
+	public FacadeSingletonDAO(Object objeto){
 		
 		String nomeDAO;
 		Class<?> objetoDAO;
 		try {
-			nomeDAO = objeto.getClass().getName();
+			nomeDAO = "model.dao."+objeto.getClass().getSimpleName()+"DAO";
 			objetoDAO = Class.forName(nomeDAO);
 			dao = (DAO) objetoDAO.newInstance();
-			System.out.println("nome da classe: "+objetoDAO.getSimpleName());
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.print("Essa classe ainda não implemnta DAO! ");
@@ -54,7 +53,15 @@ public final class FacadeSingletonDAO {
 		return dao.getList(queryComplementar);
 	}
 	
+	public Vector<?> getList() throws SQLException {
+		return dao.getList();
+	}
+	
 	public Object getOne(String queryComplementar) throws SQLException {
+		return dao.getOne(queryComplementar);
+	}
+	
+	public Object getOne(int queryComplementar) throws SQLException {
 		return dao.getOne(queryComplementar);
 	}
 	

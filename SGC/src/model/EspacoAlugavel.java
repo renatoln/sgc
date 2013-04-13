@@ -1,10 +1,13 @@
 package model;
 
+import javax.faces.bean.ManagedBean;
+
 /**
  * 
  * @author magno.oliveira
  *
  */
+@ManagedBean
 public class EspacoAlugavel extends Espaco {
 	
 	private String descricao;
@@ -34,4 +37,11 @@ public class EspacoAlugavel extends Espaco {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getDescricao();
+	}
+	
 }

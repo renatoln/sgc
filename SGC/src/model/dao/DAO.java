@@ -14,7 +14,7 @@ import model.dao.connection.ConnectionFactory;
  */
 public abstract class DAO {
 
-	private final String BANCO="sgc";
+	private final String BANCO="sg_condominio";
 	private final String LOGIN="root";
 	private final String SENHA="ifba";
 

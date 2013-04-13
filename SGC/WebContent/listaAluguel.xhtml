@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head><title>Alugueis</title>
+	<link href="./css/styles.css" 
+	      rel="stylesheet" type="text/css"/>
+	</h:head>
+	<a href="/SGC">Início</a><br/>
+		<h:body>
+			<center>
+				<h2>Lista de Aluguéis</h2> 
+		        <h:form> 
+		            <h:commandButton action="#{aluguelBean.novo}" value="Cadastrar Novo Aluguel" /> 
+		            <h:dataTable value="#{aluguelBean.alugueis}" var="c"> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Data" /></f:facet>
+		                    <h:outputText value="#{c.dataAluguel}" /> 
+		                </h:column> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Espaço alugável" /></f:facet> 
+		                    <h:outputText value="#{c.espacoAlugavel}" /> 
+		                </h:column>
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Hora de Inicia" /></f:facet> 
+		                    <h:outputText value="#{c.horaInicio}" /> 
+		                </h:column> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Hora do Fim" /></f:facet> 
+		                    <h:outputText value="#{c.horaFim}" /> 
+		                </h:column> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Status" /></f:facet> 
+		                    <h:outputText value="#{c.status}" /> 
+		                </h:column>  
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Ações" /></f:facet> 
+		                    <h:commandButton action="alterarAluguel" actionListener="#{aluguelBean.selecionar}" value="Alterar" /> 
+		                    <h:commandButton action="#{aluguelBean.remover}" actionListener="#{aluguelBean.selecionar}" value="Remover" /> 
+		                </h:column> 
+		            </h:dataTable> 
+		        </h:form>
+	        </center> 
+    </h:body>
+</html>

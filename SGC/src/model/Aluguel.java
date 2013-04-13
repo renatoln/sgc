@@ -1,21 +1,22 @@
 package model;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.io.Serializable;
+
 
 /**
  * 
  * @author magno.oliveira
  *
  */
-public class Aluguel {
+@SuppressWarnings("serial")
+public class Aluguel implements Serializable{
 	
 	private int idAluguel;
-	private Date dataAluguel;
-	private Time horaInicio;
-	private Time horaFim;
-	private boolean status;
-	private EspacoAlugavel espacoAlugavel;
+	private String dataAluguel;
+	private String horaInicio;
+	private String horaFim;
+	private String status;
+	private String espacoAlugavel;
 	
 	public int getIdAluguel() {
 		return idAluguel;
@@ -25,47 +26,43 @@ public class Aluguel {
 		this.idAluguel = idAluguel;
 	}
 	
-	public Date getDataAluguel() {
+	public String getDataAluguel() {
 		return dataAluguel;
 	}
-	
-	public void setDataAluguel(Date dataAluguel) {
+
+	public void setDataAluguel(String dataAluguel) {
 		this.dataAluguel = dataAluguel;
 	}
-	
-	public Time getHoraInicio() {
+
+	public String getHoraInicio() {
 		return horaInicio;
 	}
-	
-	public void setHoraInicio(Time horaInicio) {
+
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
-	
-	public Time getHoraFim() {
+
+	public String getHoraFim() {
 		return horaFim;
 	}
-	
-	public void setHoraFim(Time horaFim) {
+
+	public void setHoraFim(String horaFim) {
 		this.horaFim = horaFim;
 	}
-	
-	public boolean isStatus() {
+
+	public String getStatus() {
 		return status;
 	}
-	
-	public void setStatus(boolean status) {
+
+	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	public EspacoAlugavel getEspacoAlugavel() {
+
+	public String getEspacoAlugavel() {
 		return espacoAlugavel;
 	}
-	
-	public void setEspacoAlugavel(EspacoAlugavel espacoAlugavel) {
+
+	public void setEspacoAlugavel(String espacoAlugavel) {
 		this.espacoAlugavel = espacoAlugavel;
-	}
-	
-	public void setEspacoAlugavel(int espacoAlugavel) {
-		this.espacoAlugavel = new EspacoAlugavelDAO().getOne(espacoAlugavel);
 	}
 }
