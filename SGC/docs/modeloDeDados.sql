@@ -190,7 +190,7 @@ CREATE TABLE `tbleitura` (
 
 DROP TABLE IF EXISTS `tbnivelusuario`;
 CREATE TABLE `tbnivelusuario` (
-  `idnivelusuario` int(11) NOT NULL,
+  `idnivelusuario` int(11) NOT NULL auto_increment,
   `nivel` varchar(45) NOT NULL,
   `descricao` text NOT NULL,
   PRIMARY KEY  (`idnivelusuario`)
@@ -201,6 +201,9 @@ CREATE TABLE `tbnivelusuario` (
 --
 
 /*!40000 ALTER TABLE `tbnivelusuario` DISABLE KEYS */;
+INSERT INTO `tbnivelusuario` (`idnivelusuario`,`nivel`,`descricao`) VALUES 
+ (1,'Administrador','O responsavel pelo sistema'),
+ (2,'Morador','Responsavel pelo apartamento');
 /*!40000 ALTER TABLE `tbnivelusuario` ENABLE KEYS */;
 
 
@@ -320,7 +323,7 @@ INSERT INTO `tbtorre` (`idtorre`,`nome`,`descricao`) VALUES
 
 DROP TABLE IF EXISTS `tbusuario`;
 CREATE TABLE `tbusuario` (
-  `idusuario` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL auto_increment,
   `cpf` varchar(11) NOT NULL,
   `senha` varchar(32) NOT NULL,
   `usuario` varchar(32) NOT NULL,
@@ -337,6 +340,8 @@ CREATE TABLE `tbusuario` (
 --
 
 /*!40000 ALTER TABLE `tbusuario` DISABLE KEYS */;
+INSERT INTO `tbusuario` (`idusuario`,`cpf`,`senha`,`usuario`,`nome`,`email`,`idnivelusuario`) VALUES 
+ (1,'545454','13','nome','Jao','jao@gmail.com',1);
 /*!40000 ALTER TABLE `tbusuario` ENABLE KEYS */;
 
 
