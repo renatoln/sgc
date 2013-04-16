@@ -138,7 +138,7 @@ public abstract class DAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	protected final Object getOne(long idObjeto) throws SQLException{
+	public final Object getOne(long idObjeto) throws SQLException{
 		String queryComplementar =" WHERE "+getId()+" ="+idObjeto;
 		objeto=this.getOne(queryComplementar);
 		return objeto;

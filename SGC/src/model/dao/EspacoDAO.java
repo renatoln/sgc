@@ -12,7 +12,7 @@ public class EspacoDAO extends DAO {
 	
 	protected Espaco objeto;
 
-	protected EspacoDAO() throws SQLException {
+	public EspacoDAO() throws SQLException {
 		super();
 		this.setId("idespaco");
 		table = "tbespaco";
