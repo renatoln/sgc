@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head><title>Apartamentos</title>
+	<link href="./css/styles.css" 
+	      rel="stylesheet" type="text/css"/>
+	</h:head>
+	<a href="/SGC">Início</a><br/>
+		<h:body>
+			<center>
+				<h2>Lista de Apartamentos Disponiveis</h2> 
+		        <h:form> 
+		            <h:commandButton action="#{apartamentoBean.novo}" value="Cadastrar novo Apartamento" /> 
+		            <h:dataTable value="#{apartamentoBean.aptos}" var="a"> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Numero" /></f:facet>
+		                    <h:outputText value="#{a.numero}" /> 
+		                </h:column>
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Torre" /></f:facet>
+		                    <h:outputText value="#{a.idtorre}" /> 
+		                </h:column>		                 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="opcoes" /></f:facet> 
+		                    <h:commandButton action="alterarApartamento" actionListener="#{apartamentoBean.selecionar}" value="Alterar" /> 
+		                    <h:commandButton action="#{apartamentoBean.remover}" actionListener="#{apartamentoBean.selecionar}" value="Remover" /> 
+		                </h:column> 
+		            </h:dataTable> 
+		        </h:form>
+	        </center> 
+    </h:body>
+</html>

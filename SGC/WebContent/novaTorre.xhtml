@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head><title>Torres</title>
+	<link href="./css/styles.css" 
+	      rel="stylesheet" type="text/css"/>
+	</h:head>
+		<h:body>
+			<h2>Nova Torre</h2>
+			<center> 
+		        <h:form> 
+		            <h:panelGrid columns="2"> 
+		               <h:outputText value="Nome" /> 
+		                <h:inputText value="#{torreBean.torre.nome}" /> 
+		                <h:outputText value="Descricao" /> 
+		                <h:inputText value="#{torreBean.torre.descricao}" /> 
+		                <h:commandButton action="#{torreBean.alterar}" value="Alterar" /> 
+		                <h:commandButton action="#{torreBean.cancelar}" value="Cancelar" />
+		            </h:panelGrid> 
+		        </h:form>
+	       </center>  
+	    </h:body>
+</html>

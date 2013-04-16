@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head><title>Torres</title>
+	<link href="./css/styles.css" 
+	      rel="stylesheet" type="text/css"/>
+	</h:head>
+	<a href="/SGC">Início</a><br/>
+		<h:body>
+			<center>
+				<h2>Lista de Torres Cadastradas</h2> 
+		        <h:form> 
+		            <h:commandButton action="#{torreBean.novo}" value="Cadastrar nova Torre" /> 
+		            <h:dataTable value="#{torreBean.torres}" var="t"> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Nome" /></f:facet>
+		                    <h:outputText value="#{t.nome}" /> 
+		                </h:column> 
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="Descricao" /></f:facet> 
+		                    <h:outputText value="#{t.descricao}" /> 
+		                </h:column>		             
+		                <h:column> 
+		                    <f:facet name="header"><h:outputText value="opcoes" /></f:facet> 
+		                    <h:commandButton action="alterarTorre" actionListener="#{torreBean.selecionar}" value="Alterar" /> 
+		                    <h:commandButton action="#{torreBean.remover}" actionListener="#{torreBean.selecionar}" value="Remover" /> 
+		                </h:column> 
+		            </h:dataTable> 
+		        </h:form>
+	        </center> 
+    </h:body>
+</html>
